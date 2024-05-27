@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/main.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:include="fragments::header"></div>
+<form th:action="@{/submit}" th:object="${user}" method="post">
+      <input type="text"  th:field="*{username}" name="username" placeholder="Enter Username">
+      <input type="password"  th:field="*{password}" name="password" placeholder="Enter Password">
+      <button type="submit">Add User</button>
+</form>
+<div th:include="fragments::footer"></div>
+</body>
+</html>
