@@ -3,6 +3,11 @@
 
         <!DOCTYPE html>
         <html lang="en">
+        <head>
+        <style>
+        div {text-align : center;}
+        </style>
+        </head>
 
 
 <body>

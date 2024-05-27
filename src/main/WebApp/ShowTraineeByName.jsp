@@ -5,30 +5,23 @@
         <html lang="en">
         <head>
         <style>
-        h1{text-align : center;}
-        div{text-align : center ;}
-        body{background-color : yellow;}
+        div {text-align : center;}
         </style>
-        <Title>Trainee Management Application </Title>
         </head>
 
 
 <body>
-
-<h1> Trainee Management Application </h1>
             <meta charset="UTF-8">
             <title>Title</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
 <div>
- <form action="/mainpage/gettrainee" method="post" >
-         <button type="submit">VIEW TRAINEES</a></button>
-      </form>
- <form action="/mainpage/register" method="post">
-       <button type="submit">ADD TRAINEES </a></button>
-       </form>
-
+<form action= "/showtraineebyname/getTraineeByName" method="post">
+      <label for="name" > Name : </label>
+      <input type = "text" id="name" name="name" required>
+      <button type="submit">SHOW</button>
+ </form>
  </div>
 </body>
 </html>

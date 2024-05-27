@@ -25,10 +25,10 @@
                 </thead>
                 <tbody>
                         <tr>
-                            <td>${trainees.id()}</td>
-                            <td>${trainees.name()}</td>
-                            <td>${trainees.email()}</td>
-                            <td>${trainees.location()}</td>
+                            <td>${traineeDtos.id()}</td>
+                            <td>${traineeDtos.name()}</td>
+                            <td>${traineeDtos.email()}</td>
+                            <td>${traineeDtos.location()}</td>
 
                         </tr>
                 </tbody>

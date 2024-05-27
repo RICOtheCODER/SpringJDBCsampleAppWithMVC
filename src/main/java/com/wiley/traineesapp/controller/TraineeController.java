@@ -32,17 +32,35 @@ public String getTrainees(Model model){
     return "gettraineesFrontHeavy.jsp";
 }
 
-@GetMapping("/traineebyname")
-public String getTraineeByName(Model model) {
-        TraineeDto traineeDto=service.getTraineeByName("Saurajit Sarkar");
-        model.addAttribute("trainees",traineeDto);
+//public String postTraineeByName(Model model,@ModelAttribute Trainee trainee){
+//
+//}
+
+@GetMapping("/gettraineebyname")
+public String getTraineeByName(@RequestParam("name") String name, Model model) {
+        TraineeDto traineeDtos=service.getTraineeByName(name);
+        model.addAttribute("traineeDtos",traineeDtos);
         return "getTraineeByName.jsp";
 }
+@PostMapping("/showtraineebyname/getTraineeByName")
+public String postTraineeNameTree(Model model,@ModelAttribute Trainee trainee){
+        return "/getTraineeByName.jsp";
+}
+
+@PostMapping("/showTraineeByName")
+public String postTraineeByName(Model model,@ModelAttribute Trainee trainee){
+        return "/ShowTraineeByName.jsp";
+}
+
+@GetMapping("/showTraineeByName")
+    public String showTraineeByName(){
+        return "ShowTraineeByName.jsp";
+    }
     @PostMapping("/mainpage/gettrainee")
     public String addUser(@ModelAttribute Trainee trainee,Model model){
         List<TraineeDto> traineeDtos=service.getAllTrainees();
         model.addAttribute("traineeDtos",traineeDtos);
-        //add all doesnot work here 
+        //add all doesnot work here
         return "/gettraineesFrontHeavy.jsp";
     }
 
@@ -59,10 +77,15 @@ public String getTraineeByName(Model model) {
         return "getTraineeByName.jsp";
     }
 
+    @PostMapping("/mainpage/register")
+    public String postMappingRegistrationForm(@ModelAttribute Trainee trainee,Model model){
+          return "/RegistrationForm.jsp";
+    }
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model){
        TraineeDto dto=new TraineeDto(1,"Saurajit Sarkar","rico189@gmail.com","Howrah");
-       model.addAttribute(dto);
+       model.addAttribute("dto",dto);
        return "RegistrationForm.jsp";
     }
 
@@ -107,5 +130,6 @@ public String getTraineeByName(Model model) {
 //    public String addUsers(@ModelAttribute Trainee trainee){
 //        return "/gettraineesFrontHeavy.jsp";
 //    }
+
 
 }
