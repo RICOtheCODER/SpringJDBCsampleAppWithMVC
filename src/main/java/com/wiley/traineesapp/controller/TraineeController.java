@@ -20,6 +20,11 @@ public class TraineeController {
     @Autowired
     private TraineeService service;
 
+//    @GetMapping("/index")
+//    public String index(Model model){
+//        return "index";
+//    }
+
     @GetMapping("/trainee")
     public String WelcomePage(){
         return "welcome.jsp";
@@ -37,12 +42,14 @@ public String getTrainees(Model model){
 //}
 
 @GetMapping("/gettraineebyname")
-public String getTraineeByName(@RequestParam("name") String name, Model model) {
-        TraineeDto traineeDtos=service.getTraineeByName(name);
+public String getTraineeByName(@RequestParam("name") String nameOfTrainee, Model model) {
+        TraineeDto traineeDtos=service.getTraineeByName(nameOfTrainee);
+    System.out.println(nameOfTrainee);
         model.addAttribute("traineeDtos",traineeDtos);
-        return "getTraineeByName.jsp";
+    System.out.println(traineeDtos);
+        return "/getTraineeByName.jsp";
 }
-@PostMapping("/showtraineebyname/getTraineeByName")
+@PostMapping("/showtraineebyname/gettraineebyname")
 public String postTraineeNameTree(Model model,@ModelAttribute Trainee trainee){
         return "/getTraineeByName.jsp";
 }

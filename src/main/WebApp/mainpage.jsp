@@ -28,6 +28,9 @@
  <form action="/mainpage/register" method="post">
        <button type="submit">ADD TRAINEES </a></button>
        </form>
+       <form action="/mainpage/" method="post">
+              <button type="submit">SEARCH TRAINEES BY NAME </a></button>
+              </form>
 
  </div>
 </body>

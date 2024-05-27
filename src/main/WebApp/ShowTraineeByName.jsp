@@ -17,7 +17,7 @@
 
 
 <div>
-<form action= "/showtraineebyname/getTraineeByName" method="post">
+<form action= "/gettraineebyname" method="get">
       <label for="name" > Name : </label>
       <input type = "text" id="name" name="name" required>
       <button type="submit">SHOW</button>
