@@ -66,6 +66,21 @@ public class TraineeRepositoryImpl implements  TraineeRepository{
 
     @Override
     public void deleteTrainee(int id) {
-     jdbcTemplate.update("delete from backuptrainees where id= ?",id);
+
+        getTraineeById(id).ifPresent((t)->jdbcTemplate.update("delete from backuptrainees where id= ?",id));
     }
+
+    @Override
+    public Trainee updateTrainee(int id, Trainee trainee) {
+         int rowCount= jdbcTemplate.update("update backuptrainees set trainee_name=? ,email=?,location=? where" +
+                 "id =?",trainee.getName(),trainee.getEmail(),trainee.getLocation(),id);
+         if(rowCount==0){
+             throw new RecordNotFoundException("Trainee with id + "+id+" not present");
+         }
+         Trainee upDatedTrainee=getTraineeById(id).get();
+         return upDatedTrainee;
+
+    }
+
+
 }

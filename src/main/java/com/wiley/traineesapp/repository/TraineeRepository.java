@@ -11,4 +11,5 @@ public interface TraineeRepository {
     public Optional<Trainee> getTraineeByName(String name);
     public List<Trainee> getAllTrainees();
     public void deleteTrainee(int id);
+    public Trainee updateTrainee(int id,Trainee trainee);
 }

@@ -14,4 +14,6 @@ public interface TraineeService {
     public void deleteTrainee(int id);
 
     public List<TraineeDto> getAllTrainees();
+    public TraineeDto updateTrainee(int id,TraineeDto traineeDto);
+
 }
